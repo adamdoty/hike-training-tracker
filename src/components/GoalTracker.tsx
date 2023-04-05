@@ -11,6 +11,7 @@ import {
 interface Props {
   hike: Hike;
   time: { date: Date; daysLeft: number };
+  hasTrainingPlan: boolean;
 }
 
 interface Hike {
@@ -21,25 +22,33 @@ interface Hike {
   climb: number;
 }
 
-const GoalTracker = ({ hike, time }: Props) => {
+const GoalTracker = ({ hike, time, hasTrainingPlan }: Props) => {
   return (
-    <Card align="center" width="400px">
-      <CardHeader>
-        <Heading size="md">{hike.name}</Heading>
-      </CardHeader>
-      <CardBody>
-        <Text>{hike.distance} mi</Text>
-        <Text>{hike.difficulty}</Text>
-        <Text>{hike.location}</Text>
-        <Text>{hike.climb}</Text>
-        <Text>
-          {time.daysLeft} days until {time.date.toDateString()}
-        </Text>
-      </CardBody>
-      <CardFooter>
-        <Button colorScheme="blue">Setup Training Plan</Button>
-      </CardFooter>
-    </Card>
+    <div>
+      <Heading fontSize="2xl">Goal Tracker</Heading>
+      <Card align="center" width="400px">
+        <CardHeader>
+          <Heading size="md">{hike.name}</Heading>
+        </CardHeader>
+
+        <CardBody>
+          <Text>{hike.distance} mi</Text>
+          <Text>{hike.difficulty}</Text>
+          <Text>{hike.location}</Text>
+          <Text>{hike.climb}</Text>
+        </CardBody>
+
+        <CardFooter>
+          {hasTrainingPlan ? (
+            <Text>
+              {time.daysLeft} days until {time.date.toDateString()}
+            </Text>
+          ) : (
+            <Button colorScheme="blue">Setup Training Plan</Button>
+          )}
+        </CardFooter>
+      </Card>
+    </div>
   );
 };
 
