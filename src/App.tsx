@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./App.css";
-import GoalTracker from "./components/GoalTracker";
+import GoalTracker, { Hike } from "./components/GoalTracker";
+import GoalTrackerForm from "./components/GoalTrackerForm";
 
 const hike = {
   name: "Half Dome",
@@ -10,14 +12,21 @@ const hike = {
 };
 
 const time = {
-  date: new Date("2023-08-14"),
+  date: new Date("2023-08-16"),
   daysLeft: 7,
 };
 
 function App() {
+  const [hike, setHike] = useState<Hike>({} as Hike);
+
   return (
     <div>
-      <GoalTracker hike={hike} time={time} />
+      {/* if detect data in local storage -> GoalTracker : GoalTrackerForm */}
+      {Object.keys(hike).length > 0 ? (
+        <GoalTracker hike={hike} time={time} hasTrainingPlan={false} />
+      ) : (
+        <GoalTrackerForm onSubmit={(data) => setHike({ ...hike, ...data })} />
+      )}
     </div>
   );
 }

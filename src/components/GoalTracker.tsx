@@ -14,7 +14,7 @@ interface Props {
   hasTrainingPlan: boolean;
 }
 
-interface Hike {
+export interface Hike {
   name: string;
   distance: number;
   difficulty: string;
