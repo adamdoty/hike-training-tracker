@@ -1,7 +1,12 @@
 import "./App.css";
+import GoalTracker from "./components/GoalTracker";
 
 function App() {
-  return <div>Half Dome</div>;
+  return (
+    <div>
+      <GoalTracker />
+    </div>
+  );
 }
 
 export default App;
