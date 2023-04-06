@@ -1,4 +1,4 @@
-import { Button, Heading, Input } from "@chakra-ui/react";
+import { Button, Heading, Input, Select } from "@chakra-ui/react";
 import { FieldValues, useForm } from "react-hook-form";
 
 interface Hike {
@@ -45,12 +45,17 @@ const GoalTrackerForm = ({ onSubmit }: Props) => {
         <label htmlFor="difficulty" className="form-label">
           Difficulty
         </label>
-        <Input
+        <Select
           {...register("difficulty")}
           id="difficulty"
-          type="text"
           className="form-control"
-        />
+        >
+          <option value="">Select Difficulty...</option>
+          <option value="Easy">Easy</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Hard">Hard</option>
+          <option value="Very Hard">Very Hard</option>
+        </Select>
       </div>
       <div>
         <label htmlFor="location" className="form-label">
