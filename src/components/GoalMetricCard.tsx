@@ -1,8 +1,6 @@
 import {
-  Button,
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   CircularProgress,
   HStack,
@@ -10,20 +8,12 @@ import {
   Icon,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
-import { IconType } from "react-icons";
+
+import { Metric } from "../App";
 
 interface Props {
   metric: Metric;
   highestValues: Metric[];
-}
-
-export interface Metric {
-  id: number;
-  name: string;
-  value: string | number;
-  icon: IconType;
-  unit: string;
 }
 
 const GoalMetricCard = ({ metric, highestValues }: Props) => {

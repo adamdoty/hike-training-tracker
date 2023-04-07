@@ -1,20 +1,6 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Heading,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
-import GoalMetricCard, { Metric } from "./GoalMetricCard";
-
-export interface Hike {
-  name: string;
-  metrics: Metric[];
-  location: string;
-}
+import { SimpleGrid } from "@chakra-ui/react";
+import GoalMetricCard from "./GoalMetricCard";
+import { Hike } from "../App";
 
 interface Props {
   goal: Hike;
