@@ -34,6 +34,7 @@ const GoalMetricGrid = ({ goal, hikes }: Props) => {
 
   return (
     <SimpleGrid
+      mb={4}
       spacing={4}
       columns={{
         sm: 1,
