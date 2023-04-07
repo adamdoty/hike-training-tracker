@@ -4,13 +4,12 @@ import {
   MdNordicWalking,
   MdSignalCellularAlt,
 } from "react-icons/md";
-import { Hike } from "../App";
+import { Hike } from "../components/MetricGrid";
 
 const startingGoalHike: Hike = {
   id: 1,
   name: "Half Dome",
   location: "Yosemite",
-  difficulty: "Very Hard",
   metrics: [
     {
       id: 1,
@@ -29,7 +28,7 @@ const startingGoalHike: Hike = {
     {
       id: 3,
       name: "Difficulty",
-      value: 0,
+      value: 3,
       icon: MdSignalCellularAlt,
       unit: "",
     },
