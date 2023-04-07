@@ -17,10 +17,11 @@ export interface Hike {
 }
 
 interface Props {
-  hike: Hike;
+  goal: Hike;
+  hikes: Hike[];
 }
 
-const GoalMetricGrid = ({ hike }: Props) => (
+const GoalMetricGrid = ({ goal, hikes }: Props) => (
   <SimpleGrid
     spacing={4}
     columns={{
@@ -29,8 +30,12 @@ const GoalMetricGrid = ({ hike }: Props) => (
       lg: 4,
     }}
   >
-    {hike.metrics.map((metric) => (
-      <GoalMetricCard key={metric.id} metric={metric} />
+    {goal.metrics.map((metric) => (
+      <GoalMetricCard
+        key={metric.id}
+        metric={metric}
+        highestValues={hikes[0].metrics}
+      />
     ))}
   </SimpleGrid>
 );

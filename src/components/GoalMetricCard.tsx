@@ -15,6 +15,7 @@ import { IconType } from "react-icons";
 
 interface Props {
   metric: Metric;
+  highestValues: Metric[];
 }
 
 export interface Metric {
@@ -25,7 +26,7 @@ export interface Metric {
   unit: string;
 }
 
-const GoalMetricCard = ({ metric }: Props) => {
+const GoalMetricCard = ({ metric, highestValues }: Props) => {
   return (
     <Card>
       <CardHeader flexDirection="row">
